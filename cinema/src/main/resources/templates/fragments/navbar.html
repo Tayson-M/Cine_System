@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="pt-BR">
+<body>
+<nav th:fragment="navbar" class="navbar navbar-dark bg-dark px-3">
+  <a class="navbar-brand" th:href="@{/dashboard}">🎬 CinemaSystem</a>
+  <div class="d-flex align-items-center gap-3">
+    <a th:href="@{/usuarios}" class="nav-link text-white small">👥 Usuários</a>
+    <span class="text-light small">
+      Olá, <strong sec:authentication="name">usuário</strong>
+    </span>
+    <form th:action="@{/logout}" method="post">
+      <button class="btn btn-outline-light btn-sm">Sair</button>
+    </form>
+  </div>
+</nav>
+</body>
+</html>
